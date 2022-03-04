@@ -1,0 +1,10 @@
+var
+valor, salario: real
+inicio
+valor <- 0
+salario <-0
+escreva ("INFORME O VALOR DO SALÁRIO EM REAIS:  R$")
+leia (valor)
+salario <- (valor * 1.3)
+escreva ("SALÁRIO + 30% ADICIONAL SERÁ DE:      R$", salario:2:2)
+fimalgoritmo
