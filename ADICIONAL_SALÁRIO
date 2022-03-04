@@ -1,3 +1,4 @@
+algoritmo "ADICIONAL SALÁRIO"
 var
 valor, salario: real
 inicio
