@@ -1,0 +1,53 @@
+algoritmo "CONVERSOR DE MOEDA E TEMPERATURA"
+
+var
+menu: inteiro
+valor, celsius, fahrenheit, reais, dolares: real
+
+inicio
+celsius <- 0
+fahrenheit <- 0
+reais <- 0
+dolares <- 0
+
+repita
+   escreval ("ESCOLHA A CONVERSÃO DESEJADA")
+   escreval ("1. CELSIUS          >        FAHRENHEIT")
+   escreval ("2. FAHRENHEIT       >        CELSIUS")
+   escreval ("3. REAL             >        DOLAR")
+   escreval ("4. DOLAR            >        REAL")
+   escreval ("5. SAIR")
+   escreval ()
+   leia (menu)
+   enquanto (menu < 1) ou (menu > 5) faca
+      escreval ("OPÇÃO INVÁLIDA")
+      leia (menu)
+   fimenquanto
+   limpatela
+   escreval ("INFORME O VALOR OU TEMPERATURA PARA CONVERSÃO")
+   leia (valor)
+   limpatela
+   escolha (menu)
+   caso 1
+      fahrenheit <- valor * 1.8 + 32
+      escreval (valor:2:2, (" CELSIUS SÃO "), fahrenheit:2:2, (" FAHRENHEIT"))
+   caso 2
+      celsius <- valor - 32 * (5/9)
+      escreval (valor:2:2, (" FAHRENHEIT SÃO "), celsius:2:2, (" CELSIUS"))
+   caso 3
+      escreval ("INFORME A COTAÇÃO DO DOLAR EM REAIS")
+      escreval ()
+      leia (dolares)
+      reais <- valor / dolares
+      escreval (valor:2:2, (" REAIS SÃO "), reais:2:2, (" DOLARES"))
+   caso 4
+      escreval ("INFORME A COTAÇÃO DO DOLAR EM REAIS")
+      escreval ()
+      leia (dolares)
+      reais <- valor * dolares
+      escreval (valor:2:2, (" DOLARES SÃO "), reais:2:2, (" REAIS"))
+   fimescolha
+   escreval ()
+ate menu = 5
+limpatela
+fimalgoritmo
