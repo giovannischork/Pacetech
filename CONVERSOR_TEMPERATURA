@@ -1,0 +1,74 @@
+algoritmo "CONVERSOR DE TEMPERATURA"
+var
+temperaturas, horarios: vetor[1..4] de real
+opcao :literal
+i, j : inteiro
+aux1, aux2 : real
+procedimento menu()
+inicio
+escreval ("1. CELSIUS          >        FAHRENHEIT")
+escreval ("2. FAHRENHEIT       >        CELSIUS")
+escreval ("3. SAIR")
+leia(opcao)
+limpatela
+fimprocedimento
+procedimento armazenador()
+inicio
+para i de 1 ate 4 faca
+   escreva("INFORME A TEMPERATURA", i, ": ")
+   leia(temperaturas[i])
+
+   escreva("INFORME O HORARIO: ")
+   leia(horarios[i])
+   escreval()
+fimpara
+limpatela
+fimprocedimento
+procedimento conversor()
+inicio
+metodoBolha()
+
+se ( opcao = "1" ) entao
+   para i de 1 ate 4 faca
+      escreval("TEMP. DE ", temperaturas[i], " CELSIUS, REGISTRADA AS", horarios[i], "H,  CORRESPONDE A ", ((temperaturas[i] * 1.8) + 32):4:1, " FAHRENHEIT")
+   fimpara
+senao
+   para i de 1 ate 4 faca
+      escreval("TEMP. DE ", temperaturas[i], " FAHRENHEIT, REGISTRADA AS", horarios[i], "H,  CORRESPONDE A ", ((temperaturas[i] - 32) / 1.8):4:1, " CELSIUS")
+   fimpara
+fimse
+fimprocedimento
+procedimento metodoBolha()
+inicio
+para i de 1 ate 4 faca
+   para j de 1 ate 4 faca
+      se ( temperaturas[j] > temperaturas[i] ) entao
+         aux1 <- temperaturas[i]
+         temperaturas[i] <- temperaturas[j]
+         temperaturas[j] <- aux1
+         aux2 <- horarios[i]
+         horarios[i] <- horarios[j]
+         horarios[j] <- aux2
+      fimse
+   fimpara
+fimpara
+fimprocedimento
+inicio
+repita
+   menu()
+
+   escolha opcao
+   caso "1"
+      armazenador()
+      conversor()
+   caso "2"
+      armazenador()
+      conversor()
+   caso "3"
+   outrocaso
+      escreval()
+      escreval("OPCAO INVALIDA")
+   fimescolha
+ate opcao = "3"
+fimalgoritmo
+
